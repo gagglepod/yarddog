@@ -49,3 +49,9 @@ SOURCE: [Managing Environment Variables](https://stackabuse.com/managing-environ
 #6 - GraphQL is not JavaScript (even though it looks like JS) and React will not understand it. This is why you need Apollo to bind the data act as a translator between React and GraphQL.
 
 SOURCE: GraphyQL Tutorial #22 and #23 - [Front-End App](https://youtu.be/TRK_e3FV2IM)
+
+#7 - Apollo Client has changed significantly since 2018. This required some thinking to make New Apollo work with tutorial. Thankfully, the Appollo Client is well documented on the [Apollo GraphQL](https://www.apollographql.com/docs/react/get-started/#installation) website.
+
+**Example:**
+Tutoral Import: _import { gql } from 'apollo-boost';_
+Apollo Client Import: _import { gql } from '@apollo/client';_
