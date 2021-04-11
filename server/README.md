@@ -21,18 +21,19 @@ This tutorial is located on [YouTube](https://youtu.be/Y0lDGjwRYKw).
 - Express-GraphQL
 - Nodemon
 - Lodash
-- React.js
 - MongoDB
 - Mongoose
 - dotenv
+- React.js
+- Appolo - GraphyQL Client
 
 ---
 
 ## **Third-Party**
 
-- YouTube Account
-- Github Account
-- mLab Account
+- YouTube Account - YouTube.com (Tutoral Access)
+- Github Account - github.com (Repostitory)
+- mLab Account - cloud.MongoDB.com (Data)
 
 ---
 
@@ -69,3 +70,7 @@ SOURCE: GraphyQL Tutorial #16 - [YouTube](https://youtu.be/3NdgP6AVYYs)
 - Replace the MongoDB URI string with process.env.CONNECT_DB
 
 SOURCE: [Managing Environment Variables](https://stackabuse.com/managing-environment-variables-in-node-js-with-dotenv/)
+
+#6 - GraphQL is not JavaScript (even though it looks like JS) and React will not understand it. This is why you need Apollo to bind the data act as a translator between React and GraphQL.
+
+SOURCE: [Front-End App](https://youtu.be/TRK_e3FV2IM)
