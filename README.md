@@ -48,4 +48,4 @@ SOURCE: [Managing Environment Variables](https://stackabuse.com/managing-environ
 
 #6 - GraphQL is not JavaScript (even though it looks like JS) and React will not understand it. This is why you need Apollo to bind the data act as a translator between React and GraphQL.
 
-SOURCE: [Front-End App](https://youtu.be/TRK_e3FV2IM)
+SOURCE: GraphyQL Tutorial #22 and #23 - [Front-End App](https://youtu.be/TRK_e3FV2IM)
