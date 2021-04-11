@@ -1,3 +1,17 @@
+# YardDog - Front-End
+
+### MERN-based GraphQL Application Client
+
+---
+
+## **Overview**
+
+Yarddog is the application built to experiment with GraphQL.
+It follows an online (free) tutoral called GraphQL with React by The Net Ninja (March 2018).
+This tutorial is located on [YouTube](https://youtu.be/Y0lDGjwRYKw).
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
