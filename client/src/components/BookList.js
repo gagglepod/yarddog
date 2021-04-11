@@ -1,8 +1,7 @@
 import { useQuery, gql } from '@apollo/client';
-// import { graphql } from 'react-apollo';
 
 const getBooksQuery = gql`
-    query GetBooks {
+    {
       books {
         name
         id
@@ -10,17 +9,25 @@ const getBooksQuery = gql`
     }
 `;
 
-function BookList() {
+function DisplayBooks() {
   const { loading, error, data } = useQuery(getBooksQuery);
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>An error occured!</p>;
+    if (loading) return <div>Stand By: Data Loading...</div>;
+    if (error) return <div>Error: Something Broke!</div>;
 
-    return data.books.map(({ name, id}) => (
-      <div key={id}>
-          <p>{name}: {id}</p>
-      </div>
+    return data.books.map(book => (
+      <li key={book.id}>Book Name: {book.name}: {book.id}</li>
     ));
-  }
+  };
+
+  function BookList() {
+    return (
+        <div>
+          <ul id="book-list">
+            { DisplayBooks() }
+          </ul>
+        </div>
+    );
+  };
   
   export default BookList;
