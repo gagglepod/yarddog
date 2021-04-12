@@ -16,7 +16,7 @@ function DisplayBooks() {
     if (error) return <div>Error: Something Broke!</div>;
 
     return data.books.map(book => (
-      <li key={book.id}>Book Name: {book.name}: {book.id}</li>
+      <li key={book.id}>{book.name}</li>
     ));
   };
 
