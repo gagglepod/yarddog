@@ -4,6 +4,7 @@ import { ApolloProvider } from '@apollo/client/react';
 
 //components
 import BookList from "./components/BookList";
+import AddBook from "./components/AddBook";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
     <div id="main">
       <h1>YardDog Reading List</h1>
       <BookList />
+      <AddBook />
     </div>
     </ApolloProvider>
   );

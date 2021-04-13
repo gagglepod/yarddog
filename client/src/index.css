@@ -16,6 +16,7 @@ body {
   font-size: 2.4rem;
   line-height: 1.5;
   color: var(--color-body);
+  margin-left: 10px;
 }
 
 h1,
