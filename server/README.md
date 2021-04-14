@@ -27,6 +27,7 @@ This tutorial is located on [YouTube](https://youtu.be/Y0lDGjwRYKw).
 - React.js
 - Appolo - GraphyQL Client
 - cors
+- Reactjs code snippets
 
 ---
 
