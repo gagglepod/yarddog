@@ -1,25 +1,16 @@
-import { useQuery } from '@apollo/client';
+import React from 'react';
 import { getBooksQuery } from '../queries/queries';
+import { useQuery } from '@apollo/client';
 
-function DisplayBooks() {
+function BookList() {
   const { loading, error, data } = useQuery(getBooksQuery);
+  if (loading) return <p>Loading Books....</p>
+  if (error) return <p>Something Went Wrong!</p>
+  return data.books.map(book => {
+      return (
+          <li key={book.id}> {book.name}</li>
+      )
+  })
+}
 
-    if (loading) return <div>Stand By: Data Loading...</div>;
-    if (error) return <div>Error: Something Broke!</div>;
-
-    return data.books.map(book => (
-      <li key={book.id}>{book.name}</li>
-    ));
-  };
-
-  function BookList() {
-    return (
-        <div>
-          <ul id="book-list">
-            { DisplayBooks() }
-          </ul>
-        </div>
-    );
-  };
-  
-  export default BookList;
+export default BookList;
