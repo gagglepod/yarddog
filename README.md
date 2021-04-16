@@ -2,7 +2,7 @@
 
 ### MERN-based GraphQL Application
 
----
+## ![YardDog v1.2 Screenshot](/client/public/yarddog-v1.2-screenshot.jpg).
 
 ## **Overview**
 
