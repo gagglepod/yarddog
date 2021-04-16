@@ -1,16 +1,38 @@
-import React from 'react';
-import { getBooksQuery } from '../queries/queries';
+import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
+import { GET_BOOKS_QUERY } from '../queries/queries';
 
-function BookList() {
-  const { loading, error, data } = useQuery(getBooksQuery);
-  if (loading) return <p>Loading Books....</p>
-  if (error) return <p>Something Went Wrong!</p>
-  return data.books.map(book => {
-      return (
-          <li key={book.id}> {book.name}</li>
-      )
-  })
-}
+/** Compenents */
+import BookDetails from './BookDetails';
+
+const BookList = () => {
+  const { loading, error, data } = useQuery(GET_BOOKS_QUERY, {
+    errorPolicy: 'all'
+  });
+  const [selected, setSelected] = useState(null);
+
+  const displayBooks = () => {
+    if (loading) return <div>Loading Books...</div>;
+    if (error) return <div>Something Went Wrong!</div>;
+    
+    if (data.books) {
+      return data.books.map((book) => {
+        return (
+          <li style={{ cursor: 'pointer' }} key={book.id} onClick={(event) => {
+              setSelected(book.title);
+            }}
+          >{book.title}</li>
+        );
+      });
+    }
+  };
+
+  return (
+    <div>
+      <ul style={{ listStyleType: 'none' }}>{displayBooks()}</ul>
+      <BookDetails bookTitle={selected} />
+    </div>
+  );
+};
 
 export default BookList;
