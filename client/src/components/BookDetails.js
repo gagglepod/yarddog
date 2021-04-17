@@ -12,32 +12,32 @@ const BookDetails = ({ bookTitle }) => {
 
   useEffect(() => {
     if (loading) return <div>Loading ...</div>
-    if (error) return console.log('Something Went Wrong...')
+    if (error) return console.log('Stand by... Still Loading...')
 
     return setBook(data.book);
-  }, [data]);
+  }, [loading, error, data]);
 
   if (!book) {
     return (
-      <div className="alert alert-info" role="alert">
-        Click Book Title for Details
+      <div id="book-details" className="alert alert-info" role="alert">
+        Select a Book to See Details...
       </div>
     );
-  }
-
-  return (
-    <div>
-      <hr />
-      <h1><strong>Title: </strong>{book.title}</h1>
-      <ul style={{ listStyleType: 'none' }}>
-        <li><strong>Published:</strong> {book.published}</li>
-        <li><strong>Author:</strong>{' '}{book.authorBook.name ? book.authorBook.name : ''}
-        </li>
-        <li><strong>Born:</strong>{' '}{book.authorBook.born ? book.authorBook.born : 'unknown'}</li>
-      </ul>
-      <hr />
-    </div>
-  );
-};
+  } else {
+    return (
+      <div id="book-details">
+        <hr />
+        <h1><strong>{book.title}</strong></h1>
+        <ul style={{ listStyleType: 'none' }}>
+          <li><strong>Published:</strong> {book.published}</li>
+          <li><strong>Author:</strong>{' '}{book.authorBook.name ? book.authorBook.name : ''}
+          </li>
+          <li><strong>Born:</strong>{' '}{book.authorBook.born ? book.authorBook.born : 'unknown'}</li>
+        </ul>
+        <hr />
+      </div>
+    );
+  };
+}
 
 export default BookDetails;

@@ -33,23 +33,26 @@ const AddBook = () => {
 
   return (
     <div>
-      <h4>Add a new book</h4>
-      <form onSubmit={(event) => onSubmitHandler(event)}>
-        <div className="form-group">
+      <form id="add-book" onSubmit={(event) => onSubmitHandler(event)}>
+        <div className="field">
+          <h4>Add a New Book</h4>
+        </div>
+      
+        <div className="field">
           <label htmlFor="title">Book Title: </label>
           <input className="form-control" type="text" name="title" onChange={(event) => { 
               setBook({ ...book, title: event.target.value }); 
             }} />
         </div>
 
-        <div className="form-group">
+        <div className="field">
           <label htmlFor="published">Year Published: </label>
           <input className="form-control" type="text" name="published" onChange={(event) => { 
               setBook({ ...book, published: parseInt(event.target.value) }); 
             }} />
         </div>
 
-        <div className="form-group">
+        <div className="field">
           <label htmlFor="AuthorSelect">Author Name:</label>
           <select className="form-control" id="exampleFormControlSelect1" onChange={(event) => { 
               setBook({ ...book, author: event.target.value }); 

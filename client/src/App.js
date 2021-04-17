@@ -9,7 +9,7 @@ import AddBook from "./components/AddBook";
 function App() {
   return (
     <ApolloProvider client={client}>
-    <div className="container">
+    <div className="main">
       <h1>YardDog Reading List</h1>
       <BookList />
       <AddBook />

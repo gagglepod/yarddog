@@ -29,7 +29,7 @@ const BookList = () => {
 
   return (
     <div>
-      <ul style={{ listStyleType: 'none' }}>{displayBooks()}</ul>
+      <ul id="book-list" style={{ listStyleType: 'none' }}>{displayBooks()}</ul>
       <BookDetails bookTitle={selected} />
     </div>
   );
