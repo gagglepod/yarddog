@@ -2,7 +2,7 @@
 
 ### MERN-based GraphQL Application
 
-## ![YardDog v1.2 Screenshot](https://github.com/gagglepod/yarddog/blob/main/client/public/yarddog-v1.2-sceenshot.jpg)
+## ![YardDog v1.3 Screenshot](https://github.com/gagglepod/yarddog/blob/main/client/public/yarddog-v1.3-sceenshot.jpg)
 
 ## **Overview**
 
@@ -55,3 +55,29 @@ SOURCE: GraphyQL Tutorial #22 and #23 - [Front-End App](https://youtu.be/TRK_e3F
 **Example:**
 Tutoral Import: _import { gql } from 'apollo-boost';_
 Apollo Client Import: _import { gql } from '@apollo/client';_
+
+#8 - In the Chrome Console there are multiple Network 500 errors. I suspect this has to do with async calls to the cloud.mongodb.com data using GraphQL. Researching this problem lead me to understand that either Apollo or GraphQL itself does not do Promises well. The resulting behavior is a 500 error the first time a Book is clicked on because it takes some time (defined in milliseconds) for your app to make the call, GraphQL to retrieve the data, and to get a response. Once the book has been clicked, the 500 error does not repeat (cached?).
+
+---
+
+## **TODO**
+
+This tutorial was designed to teach how to use GraphyQL using React. Even though it was an older tutorial, I did manage to get the final test application created. However, it needs to be redesigned and refactored if it was to be used in production.
+
+Here's what I would do next if I were to turn this app into a real project:
+
+#1 - Seperation of Concerns: The Admin Tools (Add Book) needs to be seperated and placed in a different part of the application.
+
+#2 - The User can only select a Book to see Details. What about Author first selection?
+
+#3 - When the list of Books gets too long, stange things start to happen to the interface. The UI needs to be reworked to all for long lists of Books. Possibly breaking down books by first letter, author, category, genre?
+
+#4 - When you select a book you get a list of that authors other books. However, you cannot click on the other books to find the Book Details for those books. Need a way to extend this functionality to allow Users to click that list of books and find more details.
+
+#5 - There are only book titles. What about pictures of the book cover?
+
+#6 - The book details do not include the Book Summary. Back of the cover content would improve the book look up.
+
+#7 - Where could you buy this book? Could it include API calls to other services (e.g. [Amazon Associates Program](https://affiliate-program.amazon.com/)) to purchase this book? What about affiliate links? Could this book app make money based on the books you like?
+
+#8 - [GraphyQL vs. REST](https://blog.logrocket.com/switch-graphql-to-rest-with-sofa/) -- Is GraphQL faster than a regular database connection? The blog post [Why you shouldn't use GraphQL](https://blog.logrocket.com/why-you-shouldnt-use-graphql/) talks about reasons to consider using a [REST architecture](https://blog.logrocket.com/rest-api-firebase-cloud-functions-typescript-firestore/) instead of GraphQL.
